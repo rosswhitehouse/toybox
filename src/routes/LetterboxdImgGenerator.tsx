@@ -118,13 +118,13 @@ export default function LetterboxdImgGenerator() {
                 </StyledLabel>
                 <div>
                     <StyledButton type="submit" role="primary" extraClasses={['mr-4']}>Generate</StyledButton>
-                    <StyledButton type="button" onClick={prefill} role="secondary">Fill it for me</StyledButton>
+                    <StyledButton type="button" onClick={prefill} role="secondary" extraClasses={['mr-4']}>Fill it for me</StyledButton>
+                    <StyledLink href={downloadHref} ref={downloadLinkRef} download="letterboxd_img" type="button" disabled={downloadButtonDisabled}>Download</StyledLink>
                 </div>
             </form>
 
             <div className="canvas">
                 <canvas id="canvas" width="300" height={defaultCanvasHeight} ref={canvasRef} className="mb-8"></canvas>
-                <StyledLink href={downloadHref} ref={downloadLinkRef} download="letterboxd_img" type="button" disabled={downloadButtonDisabled}>Download</StyledLink>
             </div>
         </>
     )

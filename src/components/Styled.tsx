@@ -50,7 +50,7 @@ export const StyledLink = (props: StyledLinkProps) => {
     if (props.type === 'button') {
         classes += 'cursor-pointer border-transparent border-2 px-4 py-2 rounded-lg transition hover:text-black'
         if (props.disabled) {
-            classes +=  ' bg-gray-100 cursor-not-allowed pointer-events-none text-gray-600'
+            classes +=  ' bg-gray-200 cursor-not-allowed pointer-events-none text-gray-400'
         } else {
             classes += ' focus:outline-red-300 bg-red-200 hover:border-red-300'
         }
