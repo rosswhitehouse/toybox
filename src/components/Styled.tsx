@@ -45,30 +45,21 @@ export const StyledButton = ({ onClick, children, type, role="primary", extraCla
 interface StyledLinkProps extends React.HTMLProps<HTMLAnchorElement> {
     type?: 'button' | 'link'
 }
-export const StyledLink = (props: StyledLinkProps) => (
-    <a {...props} className={`
-        ${props.type === 'button' ? `
-            cursor-pointer
-            border-transparent
-            border-2
-            px-4 py-2
-            rounded-lg
-            transition
-            hover:text-black
-        ` : `
-            underline
-        `}
-        ${props.disabled ? `
-            bg-gray-100
-            cursor-not-allowed
-            pointer-events-none
-            text-gray-600
-        ` : `
-            focus:outline-red-300
-            bg-red-200
-            hover:border-red-300
-        `}
-    `}>
-        {props.children}
-    </a>
-)
+export const StyledLink = (props: StyledLinkProps) => {
+    let classes = ''
+    if (props.type === 'button') {
+        classes += 'cursor-pointer border-transparent border-2 px-4 py-2 rounded-lg transition hover:text-black'
+        if (props.disabled) {
+            classes +=  ' bg-gray-100 cursor-not-allowed pointer-events-none text-gray-600'
+        } else {
+            classes += ' focus:outline-red-300 bg-red-200 hover:border-red-300'
+        }
+    } else {
+        classes += 'text-red-400 underline hover:text-red-300'
+    }
+    return (
+        <a {...props} className={classes}>
+            {props.children}
+        </a>
+    )
+}

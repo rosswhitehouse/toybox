@@ -6,7 +6,7 @@ interface StyledLinkProps {
     text: string
 }
 
-const StyledLink = ({ to, text }: StyledLinkProps) => <Link to={to} className="p-4 border-red-100 border-b-2">{text}</Link>
+const StyledLink = ({ to, text }: StyledLinkProps) => <Link to={to} className="p-4 border-red-100 border-b-2 hover:font-bold hover:underline">{text}</Link>
 
 interface LayoutProps {
     children: React.ReactNode
